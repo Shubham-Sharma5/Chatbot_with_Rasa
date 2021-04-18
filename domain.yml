@@ -1,0 +1,89 @@
+session_config:
+  session_expiration_time: 0
+  carry_over_slots_to_new_session: true
+intents:
+- affirm
+- send_email
+- restaurant_search
+- deny
+- greet
+- goodbye
+- thankyou
+entities:
+- budget
+- cuisine
+- email
+- location
+slots:
+  budget:
+    type: text
+  cuisine:
+    type: text
+  email:
+    type: text
+  location:
+    type: text
+responses:
+  utter_greet:
+  - text: Hi there! How may I help you?
+  - text: Hi, Welcome to Foodie. How may I help you?
+  utter_goodbye:
+  - text: Thank you for contact us. Good Bye
+  - text: Have a fantastic day. Good Bye
+  - text: Good Bye
+  utter_default:
+  - text: Sorry, I didnt get you
+  utter_ask_cuisine:
+  - buttons:
+    - payload: Chinese
+      title: Chinese
+    - payload: Mexican
+      title: Mexican
+    - payload: Italian
+      title: Italian
+    - payload: American
+      title: American
+    - payload: South Indian
+      title: South Indian
+    - payload: North Indian
+      title: North Indian
+    text: What kind of cuisine would you prefer?
+  utter_ask_budget:
+  - buttons:
+    - payload: Lesser than Rs 300
+      title: Lesser than Rs 300
+    - payload: Rs 300 to 700
+      title: Rs 300 to 700
+    - payload: More than 700
+      title: More than 700
+    text: What is your average budget for two people?
+  utter_ask_howcanhelp:
+  - text: How can I help you?
+  utter_ask_about_emailing:
+  - text: Should I send you details of all the restaurants on email?
+  utter_ask_email_id:
+  - text: To what email id should I send it to?
+  - text: To what email address should I send it to?
+  - text: To what email address should I send the top 10 restaurants?
+  utter_ask_location:
+  - text: In which location?
+  - text: Fantastic. In which location are you looking for restaurant?
+  utter_top_restaurant:
+  - text: Showing you top rated restaurants
+actions:
+- action_email
+- action_restarted
+- action_search_restaurants
+- action_validate_cuisine
+- action_validate_email
+- action_validate_location
+- utter_ask_about_emailing
+- utter_ask_budget
+- utter_ask_cuisine
+- utter_ask_email_id
+- utter_ask_howcanhelp
+- utter_ask_location
+- utter_default
+- utter_goodbye
+- utter_greet
+- utter_top_restaurant
